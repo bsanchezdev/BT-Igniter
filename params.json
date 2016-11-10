@@ -1,0 +1,6 @@
+{
+  "name": "Bt-igniter",
+  "tagline": "NOCTURNUSDEV",
+  "body": "Una pequeña lib para crear tablas HTML con http://bootstrap-table.wenzhixin.net.cn/ mediante PHP.\r\n\r\nEs simple y escrita para usarla con codeigniter, a medida que vaya necesitando nuevos temas de la tabla, se iran publicando las nuevas funciones. en si, es una propuesta para utilziar este buen plugin de bootstrap sin tener que escribir html, desde el controlador.",
+  "note": "Don't delete this file! It's used internally to help with page regeneration."
+}
