@@ -69,8 +69,11 @@ $(function () {
             $nombre_cols[]=$value;
         endforeach;
         $c=0;
-         foreach ($table_data as $key => $value) {
-         foreach ($value as $key_ => $value_) {
+        if(isset($table_data)):
+            
+        
+         foreach (@$table_data as $key => $value) {
+         foreach (@$value as $key_ => $value_) {
              
              if (@array_key_exists($key_, $functions)):
                  $func='data-formatter="'.$functions[$key_].'"';
@@ -86,17 +89,29 @@ $(function () {
      }
      
      return "<tr>".$dato_html."</tr>";
+     else:
+         //array vacio - sin datos
+         return  "<div class='row' style='padding-top: 10px;'>"
+         . "<div class='col-xs-12'>"
+             . "<div class='jumbotron center'>SIN DATOS</div>"
+             . "</div>"
+             . "</div>";
+     endif;
     }
     
     
     protected function arreglo_to_utf8($data){
+        if(isset($data)):
         $new_data=array();
-        foreach ($data as $key => $value):
+        foreach (@$data as $key => $value):
             foreach ($value as $key_ => $value_) {
-            $new_data[$key][utf8_encode($key_)]=utf8_encode($value_);
+            $new_data[$key][utf8_encode($key_)]=@utf8_encode($value_);
             
             }
         endforeach;
        return $new_data;
+       else:
+            //array vacio - sin datos
+       endif;
     }
 }
